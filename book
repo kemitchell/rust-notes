@@ -136,3 +136,7 @@
 - Some(i) => Some(i + 1)
 - matches must be exhaustive
 - _ for default
+# if let
+- match only one pattern
+- if let pattern = expression { ... }
+- syntactic sugar

@@ -106,3 +106,8 @@
 - unit-like structs have no fields
 - unit type ()
 - need lifetimes to reference other owned
+# Example with Structs
+- print! expects Display
+- {:?} debug format
+- $[derive(Debug)]
+- {#?}

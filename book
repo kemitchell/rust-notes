@@ -140,3 +140,13 @@
 - match only one pattern
 - if let pattern = expression { ... }
 - syntactic sugar
+# Packages and Crates
+- package: crates
+- create: tree of module, lib, or exe
+- module
+- paths
+- crate: binary or library
+- crate root
+- package has Cargo.toml
+- src/main.rs
+- src/lib.rs

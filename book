@@ -47,3 +47,27 @@
 - statemnet v. expression
 - final expression returns
 - return for explicit
+# Control Flow
+- branch
+- arms
+- it is an expression
+- loop, break
+- break can retur a value
+- for ... in ...
+# What is ownership?
+- central feature
+- compile-time memoray management
+- stack v. heap
+1.  each value has an owner variable
+2.  there can only be one owner at once
+3.  when owner goes out of scope, value is dropped
+- string lietrals immutable
+- String mutable, on heap
+- String::from("hello")
+- auto drop calls
+- RAII
+- move makes shallow copy and invalidates source reference
+- use clone for deep copy
+- Copy trait
+- passing to function moves or copies
+- returning can, too

@@ -86,3 +86,10 @@
   - one mutable reference
   - any number of immutable references
 - references always valid
+# The Slice Type
+- slices do not have ownership
+- tracking index start and end
+- &s[0..5] or &s[..5]
+- string literals are slices
+- take &str as parameter
+- array slices, too

@@ -111,3 +111,13 @@
 - {:?} debug format
 - $[derive(Debug)]
 - {#?}
+# Method Syntax
+- functions in context of struct
+- first param self
+- impl Rectangle { fn area (&self) -> u32 ... }
+- rect1.area()
+- methods can own and borrow
+- automatic ref. and deref. of method invocations
+- implicit borrowing for method receivers
+- associated functions don't take self, e.g. String::from
+- can use many impl blocks

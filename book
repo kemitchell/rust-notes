@@ -71,3 +71,18 @@
 - Copy trait
 - passing to function moves or copies
 - returning can, too
+# References and Borrowing
+- &String
+- reference w/o ownership
+- * dereference operator
+- borrowing
+- cannot mutate
+- mutable reference
+- only one mutable reference at a time
+- no data races
+- can't mix mutable and immutable references
+- dangling references impossible
+- can have either:
+  - one mutable reference
+  - any number of immutable references
+- references always valid

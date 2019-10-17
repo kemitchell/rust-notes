@@ -93,3 +93,16 @@
 - string literals are slices
 - take &str as parameter
 - array slices, too
+# Structs
+- tuples with names
+- fields
+- instance
+- user.email
+- immutable by default
+- field init shorthand
+- struct update syntax
+- ..user
+- tuple structs
+- unit-like structs have no fields
+- unit type ()
+- need lifetimes to reference other owned

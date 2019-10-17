@@ -130,3 +130,9 @@
 - enum Option<T> { Some(T), None, }
 - [ ] Read Option doc.
 - match
+# match
+- patterns
+- arms
+- Some(i) => Some(i + 1)
+- matches must be exhaustive
+- _ for default

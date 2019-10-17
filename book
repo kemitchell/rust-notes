@@ -121,3 +121,11 @@
 - implicit borrowing for method receivers
 - associated functions don't take self, e.g. String::from
 - can use many impl blocks
+# Defining an Enum
+- enum IPAddrKind { V4, V6 }
+- IPAddrKind::V4
+- enum IPAddrKind { V4(u8,u8,u8,u8) ... }
+- Option: something or nothing
+- no null
+- enum Option<T> { Some(T), None, }
+- match

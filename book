@@ -128,4 +128,5 @@
 - Option: something or nothing
 - no null
 - enum Option<T> { Some(T), None, }
+- [ ] Read Option doc.
 - match

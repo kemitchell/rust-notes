@@ -150,3 +150,10 @@
 - package has Cargo.toml
 - src/main.rs
 - src/lib.rs
+# Modules
+- modules control privacy
+- mod
+- module tree
+- sibling
+- child
+- parent

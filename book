@@ -1,0 +1,49 @@
+# Introduction
+- cargo new
+- Cargo.toml
+- let (immutable)
+- let mut (mutable)
+- "associated function"
+- & to reference
+- references immutable by default
+- enums have set of possible variants, e.g. Ok, Err
+- Result types encode error info
+- [dependencies]
+- cargo update
+- Cargo.lock
+- trails define methods
+- cargo doc --open
+- match expressions have arms
+- arms have patterns
+- loop {...}
+- break
+- use match to handle errors
+- Err(_)
+# Variables and Mutability
+- variables immutable by default
+- constants must have type annotations
+- constants cannot be computed
+- let shadows
+- same name, multiple types
+# Data Types
+- scalars and compound
+- isize, usize for architecture
+- 2's complement integers
+- _ _ separators
+- overflow leads to wrapping
+- IEEE 754 floats
+- bool, true, false
+- char is four-byte Unicode
+- tuples have fixed length
+- tuple.0
+- tuple.1 ...
+- arrays are singletype and fixed-length, on stack
+- array[index]
+# Functions
+- snake case
+- no declaration order
+- parameters v. arguments
+- must annotate types
+- statemnet v. expression
+- final expression returns
+- return for explicit

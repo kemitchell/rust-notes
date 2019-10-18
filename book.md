@@ -309,3 +309,146 @@
 - `assert_ne!`
 - `#[should_panic]`
 - tests can return `Result<T,E>`
+# Controlling How Tests Are Run
+- default: parallel, threaded
+- `cargo test -- --test-threads=1`
+- captures stdout
+- `--nocapture`
+- `cargo test <name>`
+- filtering pattern
+- `#[ignore]`
+- `--ignored`
+# Test Organization
+- unit & integration
+- unit:
+  - `mod tests`
+  - `#[cfg(test)]`
+- integration:
+  - outside of library
+  - tests directory
+  - each file compiled as crate
+  - `tests/common/mod.rs`
+- binaries: `src/main.rs` calls `src/lib.rs`
+# Closures
+- capture from scope
+- `|var| { ... }`
+- don't require type annotation, but can
+- traits:
+  - `Fn`
+  - `FnMut`
+  - `FnOnce`
+- `let equal_to_x = |x| z == x;`
+# Iterators
+- lazy
+- `vl.iter()`
+- `for val in inter { ... }`
+- `Iterator` trait with next method
+- "consuming adaptors" call `next`
+- "iterator adaptors", e.g. map
+- `collect()`
+- `filter()`
+- `zip()`
+- `skip()`
+- `sum()`
+# Release Profiles
+- different configurations
+- compilation
+- dev and release
+- opt-level
+# Publishing
+- doc comments: `///`
+- Markdown within
+- `cargo doc`
+- `rustdoc`
+- `#Examples`
+- `#Panics`
+- `#Errors`
+- `#Safety`
+- `cargo test` runs examples
+- `//!` adds doc to container, e.g. in crate root
+- `cargo doc --open`
+- `Cargo.toml`
+- `cargo publish`
+- `cargo yank`
+# Cargo Workspaces
+- one `Cargo.lock` for multiple packages
+- 
+  ```
+  [workspace]
+  members = ["test",]
+  ```
+- ...
+# Smart Pointers
+- pointers with metadata
+- e.g. ref. counting
+- e.g. `String`, `Vec<T>`
+- usually implemented as structs
+- traits: `Deref`, `Drop`
+- common:
+  - `Box<T>` for heap
+  - `Rc<T>` for ref counting
+  - `Ref<T>` & `RefMut<T>` via `RefCell<T>` enforce borrowing at runtime
+# `Box<T>`
+- heap storage
+- type of unknown size at compile time
+- ensure large data won't be copied
+- own value, only want to be sure implements trait
+- recursive types
+- 
+  ```
+  enum List {
+    Const (i32, Box<List>),
+    Nil,
+  }
+  ```
+# `Deref` Trait
+- operator: `*`
+- deref coercion
+- mutable to immutable conversion
+# `Drop` Trait
+- behavior when goes out of scope
+- std::mem::drop
+# `Rc<T>`
+- reference counting
+- single-threaded only
+# `RefCell<T>`
+- interior mutability: mutable even with immutable references
+- unsafe wrapped in safe API
+- e.g. test double, mock objects
+# Reference Cycle Leaks
+- difficult, but not impossible
+- e.g. `Rc<T>` and `RefCell<T>`
+# Threads
+- process
+- threads
+- 1:1
+- green threads (M:N)
+- runtime
+- stdlib: 1:1 only
+- `std::thread`
+- `.join()`
+- `move || {...}`
+# Message Passing
+- Go approach
+- channel
+- std::sync::mpsc
+- "multi-producer, single-consumer"
+- transmitter
+- receiver
+- `tx`
+- `rx`
+- `.send()`
+- `.recv()`
+- `.clone()`
+# Shared State
+- mutex
+- `std::sync::Mutex`
+- `.lock()`
+- atomic reference counting
+- `std::sync::Atomic`
+- `Arc<T>`
+# Sync and Send
+- `std::marker`
+- Send: ownership can be transferred between threads
+- Sync: safe to reference from >=1 threads
+- Don't usually have to implement manually.

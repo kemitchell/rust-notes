@@ -182,3 +182,123 @@
 # Files
 - mod front_of_house;
 - pub mod hosting;
+# Vectors
+- Vec<t>
+- same type
+- Vec::new()
+- vec! macro
+- v.push(x)
+- dropping vector drops its contents
+- &v[n]
+- v.get(n) can return None w/o panic
+- for i in &v { ... }
+- for i in &mut v { ... }
+- use enums to store different types
+# Strings
+- data.to_string()
+- "".to_string()
+- .push_str("x")
+- s.push("1")
+- + uses add
+- deref coercion
+- format!
+- String wraps Vec<u8>
+- s.len() in bytes
+- graphemes
+- range licing can cause panics
+- s.chars()
+- s.bytes()
+- "strings are complicated"
+# Hash Maps
+- HashMap<K,V>
+- ::new()
+- .insert(k,v)
+- heap
+- homogeneous
+- zip and collect
+- Copy trait? copied
+- owned? moved
+- .get(k)
+- Option<&V>
+- for (key, value) in &hm
+- hm.entry(k).or_insert(v)
+- default: crypto.hash
+- siphash
+- BuildHasher trait
+# Errors
+- recoverable and unrecoverable
+- no exceptions
+- Result<T,E>
+- panic!
+# panic!
+- prints, unwinds stack, quits
+- Cargo.toml: [profile.release] panic = 'abort'
+- RUST_BACKTRACKE env var
+- --release flag
+# Result
+- OK(T)
+- Err(E)
+- File::open()
+- Err(error) => match error.kind()
+- .unwrap_or_else(closure)
+- .unwrap() calls panic!
+- propagate errors by returning
+- ? operator
+- From &.from
+# To panic! or not to panic!
+- default: Result
+- unwrap & expect for prototype
+- bad state
+- use types
+# Traits
+- compare to interfaces
+- methods
+- pub trait Summary { fn summarize (&self) -> String ; }
+- impl Summary for NewsArticle { .. }
+- can't implement external traits on external types
+- coherence
+- orphan rule
+- default method implementations
+- pub fn notify (item: impl Summary) { ... }
+- sugar
+- pub fn notify<T:Summary>(item: T)
+- pub fn notify(item: impl Summary + Display) <T:Summary + Display> ...
+- where T: Display + Clone
+  U: Clone + Debug
+- fn ... -> impl Summary
+- conditional method implementations
+# Generics
+- fn largest<T>(list: &[T]) -> T
+- struct Point<T>
+- enum Option<T>
+- impl<T> Point<T>
+- monomorphization at compile time
+# Lifetimes
+- every reference has lifetime, a scope
+- mostly implied
+- distinctive feature
+- prevent dangling references
+- "does not live long enough"
+- borrow checker
+- annotations
+- 'a
+- &'a i32
+- fn longest<'a>(x: &'a str, y:'a str) -> &a'str
+- live at least as long as 'a
+- also in structs
+- elision
+- input lifetimes, output lifetimes
+- methods
+- 'static: entire program run
+# Tests
+- function with test attribute
+- #[test]
+- cargo test
+- assert_eq!
+- panic!
+- assert!
+- mod tests with user super::*;
+- assert_eq!
+- assert_ne!
+- #[should_panic]
+- tests can return Result<T,E>

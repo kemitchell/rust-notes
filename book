@@ -157,3 +157,28 @@
 - sibling
 - child
 - parent
+# Paths
+- absolute
+- reltive: self, super, identifier
+- :: separator
+- create::
+- privacy boundary
+- pub mod
+- pub fn
+- ancestors only
+- super is like filesystem ...
+- pub struct
+- pub enum
+# use
+- use brings module into scope
+- like symlink
+- use functions' parent module (idiomatic)
+- as to alias
+- pub use
+- std
+- cargo
+- use std::{cmp::Ordering, io};
+- use std::collections::*;
+# Files
+- mod front_of_house;
+- pub mod hosting;

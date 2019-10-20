@@ -1,0 +1,10 @@
+- values are moved to new locations, preventing the previous location from using it
+- There is only ever one owner of data.
+- Structs own, too.
+- borrowing references
+- "consuming ownership"
+- borrowing only for a lifetime (or "scope")
+- Borrowing prevents moving until given back.
+- Can explicitly free, but can just rely on language to do so automatically.
+- C++ RAI, destructors
+- `std::rc::Rc` for reference-counted, shared memory.
